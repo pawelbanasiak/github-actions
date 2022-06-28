@@ -8,6 +8,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo dupaaaaaaaaaaaaa
+    - run: echo $INPUT_DIR
       shell: bash
  
