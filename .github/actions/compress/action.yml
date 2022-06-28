@@ -8,6 +8,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo ${{ inputs.dir }}
+    - run: find "${{ inputs.dir }}" -regex '.*\.\(js\|css\|svg\|html\|ttf\)$' -exec zopfli --gzip '{}' \;
       shell: bash
  
