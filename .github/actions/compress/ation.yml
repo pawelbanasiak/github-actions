@@ -1,0 +1,7 @@
+name: compress
+description: test
+inputs:
+  dir:
+    description: 'Directory'
+    required: '1'
+
