@@ -1,0 +1,14 @@
+name: php-cs-fixer
+description: test
+inputs:
+  dir:
+    description: 'Directory'
+    required: '1'
+
+runs:
+  using: "composite"
+  steps:
+    - run: cd "${{ inputs.dir }}"
+      shell: bash
+    - run: ./vendor/bin/php-cs-fixer fix --dry-run --allow-risky=yes
+      shell: bash
