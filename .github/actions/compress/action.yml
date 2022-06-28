@@ -5,3 +5,8 @@ inputs:
     description: 'Directory'
     required: '1'
 
+runs:
+  using: "composite"
+  steps:
+    - run: echo dupaaaaaaaaaaaaa
+ 
