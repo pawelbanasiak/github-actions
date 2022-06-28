@@ -8,6 +8,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo $INPUT_DIR
+    - run: echo ${{ inputs.dir }}
       shell: bash
  
