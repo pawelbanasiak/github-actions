@@ -1,0 +1,12 @@
+name: Archive artifacts
+description: test
+
+runs:
+  using: "composite"
+  steps:
+      run: |
+    if [[ "${GITHUB_REF_NAME}" == *"/"* ]]; then
+      echo "Invalid branch name. Use '-' instead of '/'";
+      exit 1;
+    fi;
+      shell: bash
