@@ -1,0 +1,18 @@
+name: Archive artifacts
+description: test
+inputs:
+  src:
+    description: 'Directory'
+    required: '1'
+  dst:
+    description: 'Directory'
+    required: '1'
+
+runs:
+  using: "composite"
+  steps:
+      run: |
+    tar -cvzf "${GITHUB_REF_NAME}.tar.gz" -C "${{ inputs.src }}" .
+    mkdir -p "/mnt/build_storage/artifacts/${{ inputs.dst }}"
+    cp "${GITHUB_REF_NAME}.tar.gz" "/mnt/build_storage/artifacts/${{ inputs.dst }}"
+      shell: bash
